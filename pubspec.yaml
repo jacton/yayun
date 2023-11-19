@@ -29,7 +29,23 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/baner/
+    - assets/images/rank/
     - assets/icons/
+    # - assets/poetry/曹操诗集/
+    # - assets/poetry/楚辞/
+    # - assets/poetry/论语/
+    # - assets/poetry/蒙学/
+    # - assets/poetry/纳兰性德/
+    # - assets/poetry/全唐诗/
+    # - assets/poetry/诗经/
+    # - assets/poetry/水墨唐诗/
+    # - assets/poetry/四书五经/
+    # - assets/poetry/宋词/
+    # - assets/poetry/五代诗词/
+    # - assets/poetry/幽梦影/
+    # - assets/poetry/御定全唐詩/
+    # - assets/poetry/元曲/
   # fonts:
   #   - family: Schyler
   #     fonts:

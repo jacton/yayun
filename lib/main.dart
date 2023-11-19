@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: '雅韵',
         theme: logic.state.themedata,
-        home: HimalayaPage(),
+        home: YayunPage(),
       ),
     );
   }

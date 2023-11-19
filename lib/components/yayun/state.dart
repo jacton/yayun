@@ -1,336 +1,302 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yayun/const/image_config.dart';
 
-class HimalayaState {
+class YayunState {
   ///左边导航栏
-  late List<HimalayaItemInfo> leftItemList;
+  late List<YayunItemInfo> leftItemList;
 
   ///banner数据源
   late List<String> bannerList;
 
   ///猜你喜欢数据源
-  late List<HimalayaSubItemInfo> guessList;
+  late List<YayunSubItemInfo> guessList;
 
   ///最新精选数据源
-  late List<HimalayaSubItemInfo> newestSortList;
-  late List<HimalayaSubItemInfo> newestCardList;
+  late List<YayunSubItemInfo> newestSortList;
+  late List<YayunSubItemInfo> newestCardList;
 
   ///热门主播数据源
-  late List<HimalayaSubItemInfo> anchorList;
+  late List<YayunSubItemInfo> anchorList;
 
   ///相关榜单
-  late List<HimalayaItemInfo> rankList;
+  late List<YayunItemInfo> rankList;
 
   ///音频播放信息
-  late HimalayaSubItemInfo audioPlayInfo;
+  late YayunSubItemInfo audioPlayInfo;
 
   late ScrollController scrollController;
 
-  HimalayaState() {
+  YayunState() {
     scrollController = ScrollController(initialScrollOffset: 50.0);
 
     //侧边导航栏目初始数据
     leftItemList = [
-      HimalayaItemInfo(title: '推荐', subItemList: [
-        HimalayaSubItemInfo(
+      YayunItemInfo(title: '推荐', subItemList: [
+        YayunSubItemInfo(
           title: '发现',
           icon: Icons.explore,
-          tag: HimalayaStatus.find,
+          tag: YayunStatus.find,
           isSelected: true,
         ),
-        HimalayaSubItemInfo(
-          title: '广播电台',
+        YayunSubItemInfo(
+          title: '诗文',
           icon: Icons.web,
-          tag: HimalayaStatus.broadcast,
+          tag: YayunStatus.broadcast,
         ),
-        HimalayaSubItemInfo(
-          title: '私人FM',
+        YayunSubItemInfo(
+          title: '名句',
           icon: Icons.wb_auto_outlined,
-          tag: HimalayaStatus.fm,
+          tag: YayunStatus.fm,
         ),
-        HimalayaSubItemInfo(
-          title: '排行榜',
+        YayunSubItemInfo(
+          title: '作者',
           icon: Icons.assessment_outlined,
-          tag: HimalayaStatus.rank,
+          tag: YayunStatus.rank,
         ),
-        HimalayaSubItemInfo(
-          title: '全部分类',
+        YayunSubItemInfo(
+          title: '朝代',
           icon: Icons.widgets_outlined,
-          tag: HimalayaStatus.sort,
+          tag: YayunStatus.sort,
         ),
       ]),
-      HimalayaItemInfo(title: '我听', subItemList: [
-        HimalayaSubItemInfo(
-          title: '我的订阅',
+      YayunItemInfo(title: '我的', subItemList: [
+        YayunSubItemInfo(
+          title: '收藏',
           icon: Icons.star_border,
-          tag: HimalayaStatus.subscription,
-        ),
-        HimalayaSubItemInfo(
-          title: '全部更新',
-          icon: Icons.autorenew_outlined,
-          tag: HimalayaStatus.update,
-        ),
-        HimalayaSubItemInfo(
-          title: '下载中心',
-          icon: Icons.system_update_alt,
-          tag: HimalayaStatus.download,
-        ),
-        HimalayaSubItemInfo(
-          title: '收听历史',
-          icon: Icons.history,
-          tag: HimalayaStatus.history,
-        ),
-        HimalayaSubItemInfo(
-          title: '我的已购',
-          icon: Icons.shopping_cart_outlined,
-          tag: HimalayaStatus.shop,
-        ),
-      ]),
-      HimalayaItemInfo(title: '我创建的听单', subItemList: [
-        HimalayaSubItemInfo(
-          title: '我喜欢的声音',
-          icon: Icons.favorite_border,
-          tag: HimalayaStatus.sound,
-        ),
-        HimalayaSubItemInfo(
-          title: '我喜欢的音乐',
-          icon: Icons.mood_outlined,
-          tag: HimalayaStatus.music,
+          tag: YayunStatus.subscription,
         ),
       ]),
     ];
 
     //banner图片数据源
     bannerList = [
-      ImageHimalayaConfig.bannerSeven,
-      ImageHimalayaConfig.bannerTwo,
-      ImageHimalayaConfig.bannerThree,
-      ImageHimalayaConfig.bannerFour,
-      ImageHimalayaConfig.bannerFive,
-      ImageHimalayaConfig.bannerSix,
-      ImageHimalayaConfig.bannerOne,
-      ImageHimalayaConfig.bannerEight,
-      ImageHimalayaConfig.bannerNine,
-      ImageHimalayaConfig.bannerTen,
-      ImageHimalayaConfig.bannerEleven,
+      ImageYayunConfig.bannerSeven,
+      ImageYayunConfig.bannerTwo,
+      ImageYayunConfig.bannerThree,
+      ImageYayunConfig.bannerFour,
+      ImageYayunConfig.bannerFive,
+      ImageYayunConfig.bannerSix,
+      ImageYayunConfig.bannerOne,
+      ImageYayunConfig.bannerEight,
+      ImageYayunConfig.bannerNine,
+      ImageYayunConfig.bannerTen,
     ];
 
     //猜你喜欢：数据源
     guessList = [
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '阿朵的柒十柒',
         subTitle: '阿朵',
-        tag: ImageHimalayaConfig.guessOne,
+        tag: ImageYayunConfig.guessOne,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '一星期一本书',
         subTitle: '一星期一本书',
-        tag: ImageHimalayaConfig.guessTwo,
+        tag: ImageYayunConfig.guessTwo,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '武动乾坤(上部)',
         subTitle: '有声的紫襟',
-        tag: ImageHimalayaConfig.guessThree,
+        tag: ImageYayunConfig.guessThree,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '那些好听的女生翻唱',
         subTitle: '花小小茵',
-        tag: ImageHimalayaConfig.guessFour,
+        tag: ImageYayunConfig.guessFour,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '斗罗之一锤99级',
         subTitle: '清时_Koln',
-        tag: ImageHimalayaConfig.guessFive,
+        tag: ImageYayunConfig.guessFive,
       ),
     ];
 
     //最新精选数据源
     newestSortList = [
-      HimalayaSubItemInfo(title: '有声书', isSelected: true),
-      HimalayaSubItemInfo(title: '个人成长', isSelected: false),
-      HimalayaSubItemInfo(title: '人文', isSelected: false),
-      HimalayaSubItemInfo(title: '外语', isSelected: false),
-      HimalayaSubItemInfo(title: '娱乐', isSelected: false),
-      HimalayaSubItemInfo(title: '商业财经', isSelected: false),
+      YayunSubItemInfo(title: '有声书', isSelected: true),
+      YayunSubItemInfo(title: '个人成长', isSelected: false),
+      YayunSubItemInfo(title: '人文', isSelected: false),
+      YayunSubItemInfo(title: '外语', isSelected: false),
+      YayunSubItemInfo(title: '娱乐', isSelected: false),
+      YayunSubItemInfo(title: '商业财经', isSelected: false),
     ];
     newestCardList = [
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '重生八零，媳妇有点辣',
         subTitle: '君颜讲故事',
-        tag: ImageHimalayaConfig.featureOne,
+        tag: ImageYayunConfig.featureOne,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '慕少，狠霸道',
         subTitle: '妙儿姐',
-        tag: ImageHimalayaConfig.featureTwo,
+        tag: ImageYayunConfig.featureTwo,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '摸金天师（紫襟演播）',
         subTitle: '有声的紫襟',
-        tag: ImageHimalayaConfig.featureThree,
+        tag: ImageYayunConfig.featureThree,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '猎罪者',
         subTitle: '有声的紫襟',
-        tag: ImageHimalayaConfig.featureFour,
+        tag: ImageYayunConfig.featureFour,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '王的女人谁敢动',
         subTitle: '一刀苏苏',
-        tag: ImageHimalayaConfig.featureFive,
+        tag: ImageYayunConfig.featureFive,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '绝世高手【头陀渊】',
         subTitle: '头陀渊讲故事',
-        tag: ImageHimalayaConfig.featureSix,
+        tag: ImageYayunConfig.featureSix,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '中国民间故事',
         subTitle: '霄旭讲故事',
-        tag: ImageHimalayaConfig.featureSeven,
+        tag: ImageYayunConfig.featureSeven,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '雪中悍刀行',
         subTitle: '大斌',
-        tag: ImageHimalayaConfig.featureEight,
+        tag: ImageYayunConfig.featureEight,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '我的老千江湖',
         subTitle: '有声的紫襟',
-        tag: ImageHimalayaConfig.featureNine,
+        tag: ImageYayunConfig.featureNine,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '一剑独尊',
         subTitle: '有声的紫襟',
-        tag: ImageHimalayaConfig.featureTen,
+        tag: ImageYayunConfig.featureTen,
       ),
     ];
 
     //热门主播数据源
     anchorList = [
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '01',
         subTitle: '有声的紫襟',
-        tag: ImageHimalayaConfig.anchorOne,
+        tag: ImageYayunConfig.anchorOne,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '02',
         subTitle: '头陀渊讲故事',
-        tag: ImageHimalayaConfig.anchorTwo,
+        tag: ImageYayunConfig.anchorTwo,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '03',
         subTitle: '果维听书',
-        tag: ImageHimalayaConfig.anchorThree,
+        tag: ImageYayunConfig.anchorThree,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '04',
         subTitle: '_牛大宝_',
-        tag: ImageHimalayaConfig.anchorFour,
+        tag: ImageYayunConfig.anchorFour,
       ),
-      HimalayaSubItemInfo(
+      YayunSubItemInfo(
         title: '05',
         subTitle: '365读书',
-        tag: ImageHimalayaConfig.anchorFive,
+        tag: ImageYayunConfig.anchorFive,
       ),
     ];
 
     //各类榜单源数据
     rankList = [
-      HimalayaItemInfo(title: '经典免费榜', subItemList: [
-        HimalayaSubItemInfo(
+      YayunItemInfo(title: '经典免费榜', subItemList: [
+        YayunSubItemInfo(
           title: '辽沈先声',
           subTitle: '辽沈晚报',
-          tag: ImageHimalayaConfig.listClassicOne,
+          tag: ImageYayunConfig.listClassicOne,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '郭德纲21年相声精选',
           subTitle: '德云社郭德纲相声VIP',
-          tag: ImageHimalayaConfig.listClassicTwo,
+          tag: ImageYayunConfig.listClassicTwo,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '南都快讯',
           subTitle: '南方都市报',
-          tag: ImageHimalayaConfig.listClassicThree,
+          tag: ImageYayunConfig.listClassicThree,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '鲜快报',
           subTitle: '封面新闻',
-          tag: ImageHimalayaConfig.listClassicFour,
+          tag: ImageYayunConfig.listClassicFour,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '摸金天师（紫襟演播）',
           subTitle: '有声的紫襟',
-          tag: ImageHimalayaConfig.listClassicFive,
+          tag: ImageYayunConfig.listClassicFive,
         ),
       ]),
-      HimalayaItemInfo(title: '有声书免费榜', subItemList: [
-        HimalayaSubItemInfo(
+      YayunItemInfo(title: '有声书免费榜', subItemList: [
+        YayunSubItemInfo(
           title: '摸金天师（紫襟演播）',
           subTitle: '有声的紫襟',
-          tag: ImageHimalayaConfig.listSoundOne,
+          tag: ImageYayunConfig.listSoundOne,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '猎罪者',
           subTitle: '有声的紫襟',
-          tag: ImageHimalayaConfig.listSoundTwo,
+          tag: ImageYayunConfig.listSoundTwo,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '王的女人谁敢动',
           subTitle: '一刀苏苏',
-          tag: ImageHimalayaConfig.listSoundThree,
+          tag: ImageYayunConfig.listSoundThree,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '绝世高手',
           subTitle: '头陀渊讲故事',
-          tag: ImageHimalayaConfig.listSoundFour,
+          tag: ImageYayunConfig.listSoundFour,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '中国民间故事',
           subTitle: '霄旭讲故事',
-          tag: ImageHimalayaConfig.listSoundFive,
+          tag: ImageYayunConfig.listSoundFive,
         ),
       ]),
-      HimalayaItemInfo(title: '相声评书免费榜', subItemList: [
-        HimalayaSubItemInfo(
+      YayunItemInfo(title: '相声评书免费榜', subItemList: [
+        YayunSubItemInfo(
           title: '郭德纲21年相声精选',
           subTitle: '德云社郭德纲相声VIP',
-          tag: ImageHimalayaConfig.listCrosstalkOne,
+          tag: ImageYayunConfig.listCrosstalkOne,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '郭德纲相声经典',
           subTitle: '德云社郭德纲相声VIP',
-          tag: ImageHimalayaConfig.listCrosstalkTwo,
+          tag: ImageYayunConfig.listCrosstalkTwo,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '岳云鹏孙越爆笑相声',
           subTitle: '岳云鹏相声',
-          tag: ImageHimalayaConfig.listCrosstalkThree,
+          tag: ImageYayunConfig.listCrosstalkThree,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '岳云鹏孙越相声集',
           subTitle: '岳云鹏相声',
-          tag: ImageHimalayaConfig.listCrosstalkFour,
+          tag: ImageYayunConfig.listCrosstalkFour,
         ),
-        HimalayaSubItemInfo(
+        YayunSubItemInfo(
           title: '乱世枭雄 | 单田芳经典',
           subTitle: '单田芳评书',
-          tag: ImageHimalayaConfig.listCrosstalkFive,
+          tag: ImageYayunConfig.listCrosstalkFive,
         ),
       ]),
     ];
 
     //音频播放数据源
-    audioPlayInfo = HimalayaSubItemInfo(
+    audioPlayInfo = YayunSubItemInfo(
       title: '雪中悍刀行 | 大斌&免费有声小说',
       subTitle: '《御龙行》徒有琴',
-      tag: ImageHimalayaConfig.featureEight,
+      tag: ImageYayunConfig.featureEight,
     );
   }
 }
 
-class HimalayaStatus {
+class YayunStatus {
   ///推荐
   static const String find = 'find';
   static const String broadcast = 'broadcast';
@@ -351,8 +317,8 @@ class HimalayaStatus {
 }
 
 ///侧边栏数据
-class HimalayaItemInfo {
-  HimalayaItemInfo({
+class YayunItemInfo {
+  YayunItemInfo({
     required this.title,
     required this.subItemList,
   });
@@ -364,8 +330,8 @@ class HimalayaItemInfo {
   List<dynamic> subItemList;
 }
 
-class HimalayaSubItemInfo {
-  HimalayaSubItemInfo({
+class YayunSubItemInfo {
+  YayunSubItemInfo({
     required this.title,
     this.subTitle,
     this.tag,

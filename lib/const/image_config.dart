@@ -12,36 +12,21 @@ class ImageFunctionStatus {
       'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/flutter_use/20201129134857.png';
 }
 
-class ImageHimalayaConfig {
+class ImageYayunConfig {
   ///logo图标
-  static const String logo =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306205207.png';
-  static const String headPic =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210307193405.png';
+  static const String logo = 'assets/images/logo.png';
 
   ///banner图标
-  static const String bannerOne =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306205810.jpeg';
-  static const String bannerTwo =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210051.jpeg';
-  static const String bannerThree =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210112.jpeg';
-  static const String bannerFour =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210136.jpeg';
-  static const String bannerFive =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210152.jpeg';
-  static const String bannerSix =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210330.jpeg';
-  static const String bannerSeven =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210545.jpeg';
-  static const String bannerEight =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210602.jpeg';
-  static const String bannerNine =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210648.jpeg';
-  static const String bannerTen =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210751.jpeg';
-  static const String bannerEleven =
-      'https://raw.githubusercontent.com/xdd666t/MyData/master/pic/flutter/norm/20210306210807.jpeg';
+  static const String bannerOne = 'assets/images/baner/baner_1.jpg';
+  static const String bannerTwo = 'assets/images/baner/baner_2.jpg';
+  static const String bannerThree = 'assets/images/baner/baner_3.jpg';
+  static const String bannerFour = 'assets/images/baner/baner_4.jpg';
+  static const String bannerFive = 'assets/images/baner/baner_5.jpg';
+  static const String bannerSix = 'assets/images/baner/baner_6.jpg';
+  static const String bannerSeven = 'assets/images/baner/baner_7.jpg';
+  static const String bannerEight = 'assets/images/baner/baner_8.jpg';
+  static const String bannerNine = 'assets/images/baner/baner_9.jpg';
+  static const String bannerTen = 'assets/images/baner/baner_10.jpg';
 
   ///猜你喜欢
   static const String guessOne =

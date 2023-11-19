@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'state.dart';
 
-class HimalayaLogic extends GetxController {
-  final HimalayaState state = HimalayaState();
+class YayunLogic extends GetxController {
+  final YayunState state = YayunState();
 
   ///左切换
   void onLeftArrow() {
@@ -65,7 +65,7 @@ class HimalayaLogic extends GetxController {
   }
 
   ///榜单 - item
-  void rankItem(HimalayaSubItemInfo itemInfo) {
+  void rankItem(YayunSubItemInfo itemInfo) {
     print(itemInfo.title);
 
     state.audioPlayInfo.title = itemInfo.title;
@@ -81,12 +81,12 @@ class HimalayaLogic extends GetxController {
   }
 
   ///热门主播
-  void hotAnchor(HimalayaSubItemInfo itemInfo) {
+  void hotAnchor(YayunSubItemInfo itemInfo) {
     print(itemInfo.subTitle);
   }
 
   ///最新精选 选择分类标题
-  void sortTitle(HimalayaSubItemInfo itemInfo) {
+  void sortTitle(YayunSubItemInfo itemInfo) {
     for (var item in state.newestSortList) {
       if (item.isSelected) {
         item.isSelected = false;
@@ -99,7 +99,7 @@ class HimalayaLogic extends GetxController {
   }
 
   ///最新精选 点击具体card
-  void onNewest(HimalayaSubItemInfo itemInfo) {
+  void onNewest(YayunSubItemInfo itemInfo) {
     print(itemInfo.title);
     state.audioPlayInfo.title = itemInfo.title;
     state.audioPlayInfo.subTitle = itemInfo.subTitle;
@@ -109,7 +109,7 @@ class HimalayaLogic extends GetxController {
   }
 
   ///猜你喜欢: 具体的卡片
-  void guessDetail(HimalayaSubItemInfo itemInfo) {
+  void guessDetail(YayunSubItemInfo itemInfo) {
     print(itemInfo.title);
     state.audioPlayInfo.title = itemInfo.title;
     state.audioPlayInfo.subTitle = itemInfo.subTitle;
@@ -158,47 +158,47 @@ class HimalayaLogic extends GetxController {
   void onSearch(String msg) {}
 
   ///点击导航栏item
-  void navigationItem(HimalayaSubItemInfo item) {
+  void navigationItem(YayunSubItemInfo item) {
     //显示点击的item栏目
     print(item.title);
 
     //处理不同item回调
     _restoreNavigationStatus(item.tag);
     switch (item.tag) {
-      case HimalayaStatus.find:
+      case YayunStatus.find:
         //发现
         break;
-      case HimalayaStatus.broadcast:
+      case YayunStatus.broadcast:
         //广播电台
         break;
-      case HimalayaStatus.fm:
+      case YayunStatus.fm:
         //私人FM
         break;
-      case HimalayaStatus.rank:
+      case YayunStatus.rank:
         //排行榜
         break;
-      case HimalayaStatus.sort:
+      case YayunStatus.sort:
         //全部分类
         break;
-      case HimalayaStatus.subscription:
+      case YayunStatus.subscription:
         //我的订阅
         break;
-      case HimalayaStatus.update:
+      case YayunStatus.update:
         //全部更新
         break;
-      case HimalayaStatus.download:
+      case YayunStatus.download:
         //下载中心
         break;
-      case HimalayaStatus.history:
+      case YayunStatus.history:
         //收听历史
         break;
-      case HimalayaStatus.shop:
+      case YayunStatus.shop:
         //我的已购
         break;
-      case HimalayaStatus.sound:
+      case YayunStatus.sound:
         //我喜欢的声音
         break;
-      case HimalayaStatus.music:
+      case YayunStatus.music:
         //我喜欢的音乐
         break;
     }
